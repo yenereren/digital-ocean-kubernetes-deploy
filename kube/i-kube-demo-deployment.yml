@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: i-kube-demo
+  namespace: default
+  labels:
+    app: i-kube-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: i-kube-demo
+  template:
+    metadata:
+      labels:
+        app: i-kube-demo
+    spec:
+      containers:
+        - name: i-kube-demo
+          image: mehmeterenyener2/i-kube-demo:latest
+          ports:
+            - containerPort: 80
+              name: http

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: i-kube-demo
-          image: mehmeterenyener2/i-kube-demo:latest
+          image: mehmeterenyener2/i-kube-demo::$COMMIT_SHA1
           ports:
             - containerPort: 80
               name: http
